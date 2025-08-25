@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>📑 Kết quả</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #121212;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: #e0e0e0;
+    }
+
+    .container {
+      background: #1e1e1e;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(168,85,247,0.3);
+      text-align: center;
+      width: 650px;
+      max-width: 95%;
+    }
+
+    h1 {
+      color: #a855f7;
+      margin-bottom: 25px;
+      text-shadow: 0 0 10px rgba(168,85,247,0.6);
+    }
+
+    .card {
+      background: #2a2a2a;
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      text-align: left;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      border-left: 5px solid #9333ea;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #c084fc;
+      font-weight: bold;
+    }
+
+    .card p {
+      line-height: 1.6;
+      color: #ddd;
+      white-space: pre-line; /* giữ format xuống dòng */
+    }
+
+    a {
+      display: inline-block;
+      margin: 8px;
+      text-decoration: none;
+      background: linear-gradient(135deg, #a855f7, #7e22ce);
+      color: white;
+      padding: 10px 22px;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    a:hover {
+      background: linear-gradient(135deg, #9333ea, #6b21a8);
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(168,85,247,0.6);
+    }
+
+    .back-link {
+      display: block;
+      margin-top: 18px;
+      font-weight: bold;
+      background: #2a2a2a;
+      color: #e0e0e0;
+      padding: 10px 15px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .back-link:hover {
+      background: #9333ea;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📑 Kết quả chuyển đổi</h1>
+
+    <div class="card">
+      <h3>📄 Văn bản gốc</h3>
+      <p>{{ text }}</p>
+    </div>
+
+    <div class="card">
+      <h3>✍️ Tóm tắt</h3>
+      <p>{{ summary }}</p>
+    </div>
+
+    <div class="card" style="text-align:center;">
+      <h3>⬇️ Tải xuống</h3>
+      <a href="{{ docx }}">📂 DOCX</a>
+      <a href="{{ pdf }}">📕 PDF</a>
+    </div>
+
+    <a href="{{ url_for('index') }}" class="back-link">🔙 Quay lại</a>
+  </div>
+</body>
+</html>
